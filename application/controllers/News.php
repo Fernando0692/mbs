@@ -47,7 +47,7 @@ class News extends CI_Controller
         if ($this->form_validation->run()=== FALSE)
         {
             $this->load->view('templates/header', $data);
-            $this->load->view('news/success');
+            $this->load->view('news/create');
             $this->load->view('templates/footer');
         }
         else
@@ -61,7 +61,7 @@ class News extends CI_Controller
 
     public function edit()
     {
-        $id = $this-uri->segment(3);
+        $id = $this->uri->segment(3);
         if (empty($id))
         {
             show_404();
@@ -79,7 +79,7 @@ class News extends CI_Controller
         if ($this->form_validation->run()=== FALSE)
         {
             $this->load->view('templates/header', $data);
-            $this->load->view('news/success');
+            $this->load->view('news/edit');
             $this->load->view('templates/footer');
         }
         else
